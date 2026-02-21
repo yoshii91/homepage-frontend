@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./dist/output.css" />
+    <title>お問い合わせ | 襖・障子 張り替え</title>
+  </head>
+
+  <body class="bg-gray-50 text-gray-900">
+    <!-- Header -->
+    <header class="border-b bg-white">
+      <div class="mx-auto max-w-5xl px-4 py-5 sm:px-6">
+        <div class="flex items-center justify-between">
+          <a href="./index.html" class="text-lg font-semibold tracking-tight">
+            襖・障子 張り替え
+          </a>
+
+          <nav class="flex items-center gap-3 text-sm">
+            <a href="./price.html" class="text-gray-600 hover:text-gray-900"
+              >料金表</a
+            >
+            <a href="./contact.html" class="font-semibold text-gray-900"
+              >お問い合わせ</a
+            >
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main class="mx-auto max-w-5xl px-4 py-10 sm:px-6">
+      <section class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-gray-100">
+        <p class="text-sm text-gray-600">
+          まずはお気軽にご相談ください（送信はデモです）
+        </p>
+        <h1 class="mt-2 text-2xl font-bold tracking-tight sm:text-3xl">
+          お問い合わせ
+        </h1>
+        <p class="mt-3 text-gray-600">
+          このページは<strong>学習用の仮送信フォーム</strong>です。入力チェックやUI表示の練習ができます。
+        </p>
+
+        <!-- Form -->
+        <form id="contactForm" class="mt-8 space-y-6" novalidate>
+          <!-- Name -->
+          <div>
+            <label for="name" class="block text-sm font-semibold"
+              >お名前 <span class="text-red-600">*</span></label
+            >
+            <input
+              id="name"
+              name="name"
+              type="text"
+              autocomplete="name"
+              class="mt-2 w-full rounded-md border border-gray-200 bg-white px-4 py-3 text-sm outline-none focus:border-blue-500"
+              placeholder="例）若井 良輝"
+              required
+            />
+            <p id="errName" class="mt-2 hidden text-sm text-red-600"></p>
+          </div>
+
+          <!-- Contact -->
+          <div class="grid gap-4 md:grid-cols-2">
+            <div>
+              <label for="email" class="block text-sm font-semibold"
+                >メール</label
+              >
+              <input
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                class="mt-2 w-full rounded-md border border-gray-200 bg-white px-4 py-3 text-sm outline-none focus:border-blue-500"
+                placeholder="example@mail.com"
+              />
+              <p class="mt-2 text-xs text-gray-500">
+                ※ 電話で連絡希望の方は、電話番号だけでもOK
+              </p>
+            </div>
+
+            <div>
+              <label for="tel" class="block text-sm font-semibold"
+                >電話番号</label
+              >
+              <input
+                id="tel"
+                name="tel"
+                type="tel"
+                autocomplete="tel"
+                class="mt-2 w-full rounded-md border border-gray-200 bg-white px-4 py-3 text-sm outline-none focus:border-blue-500"
+                placeholder="090-1234-5678"
+              />
+              <p id="errContact" class="mt-2 hidden text-sm text-red-600"></p>
+            </div>
+          </div>
+
+          <!-- Area + Type -->
+          <div class="grid gap-4 md:grid-cols-2">
+            <div>
+              <label for="area" class="block text-sm font-semibold"
+                >お住まい（市区町村まで）
+                <span class="text-red-600">*</span></label
+              >
+              <input
+                id="area"
+                name="area"
+                type="text"
+                class="mt-2 w-full rounded-md border border-gray-200 bg-white px-4 py-3 text-sm outline-none focus:border-blue-500"
+                placeholder="例）新潟市中央区"
+                required
+              />
+              <p id="errArea" class="mt-2 hidden text-sm text-red-600"></p>
+            </div>
+
+            <div>
+              <label for="type" class="block text-sm font-semibold"
+                >ご相談内容 <span class="text-red-600">*</span></label
+              >
+              <select
+                id="type"
+                name="type"
+                class="mt-2 w-full rounded-md border border-gray-200 bg-white px-4 py-3 text-sm outline-none focus:border-blue-500"
+                required
+              >
+                <option value="">選択してください</option>
+                <option value="fusuma">襖（ふすま）</option>
+                <option value="shoji">障子（しょうじ）</option>
+                <option value="amido">網戸（あみど）</option>
+                <option value="other">その他</option>
+              </select>
+              <p id="errType" class="mt-2 hidden text-sm text-red-600"></p>
+            </div>
+          </div>
+
+          <!-- Count + Timing -->
+          <div class="grid gap-4 md:grid-cols-2">
+            <div>
+              <label for="count" class="block text-sm font-semibold"
+                >枚数（目安）</label
+              >
+              <input
+                id="count"
+                name="count"
+                type="number"
+                min="0"
+                class="mt-2 w-full rounded-md border border-gray-200 bg-white px-4 py-3 text-sm outline-none focus:border-blue-500"
+                placeholder="例）4"
+              />
+            </div>
+
+            <div>
+              <label for="timing" class="block text-sm font-semibold"
+                >希望時期</label
+              >
+              <select
+                id="timing"
+                name="timing"
+                class="mt-2 w-full rounded-md border border-gray-200 bg-white px-4 py-3 text-sm outline-none focus:border-blue-500"
+              >
+                <option value="">未定</option>
+                <option value="soon">なるべく早く</option>
+                <option value="month">1ヶ月以内</option>
+                <option value="later">急ぎではない</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Message -->
+          <div>
+            <label for="message" class="block text-sm font-semibold"
+              >詳細 <span class="text-red-600">*</span></label
+            >
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              class="mt-2 w-full rounded-md border border-gray-200 bg-white px-4 py-3 text-sm outline-none focus:border-blue-500"
+              placeholder="例）障子が破れてしまったので、張り替え希望。枚数は2枚。"
+              required
+            ></textarea>
+            <p id="errMessage" class="mt-2 hidden text-sm text-red-600"></p>
+          </div>
+
+          <!-- Buttons -->
+          <div class="flex flex-col gap-3 sm:flex-row">
+            <button
+              type="submit"
+              class="inline-flex items-center justify-center rounded-md bg-blue-600 px-6 py-3 text-sm font-semibold text-white hover:bg-blue-700"
+            >
+              送信（デモ）
+            </button>
+
+            <a
+              href="./price.html"
+              class="inline-flex items-center justify-center rounded-md border border-gray-200 bg-white px-6 py-3 text-sm font-semibold text-gray-900 hover:bg-gray-50"
+            >
+              料金表を見る
+            </a>
+          </div>
+
+          <p class="text-xs text-gray-500">
+            ※
+            実運用では「送信先（メール/DB）」が必要です。次のステップで実装できます。
+          </p>
+        </form>
+      </section>
+
+      <!-- Result (demo) -->
+      <section
+        id="resultBox"
+        class="mt-6 hidden rounded-2xl bg-white p-6 shadow-sm ring-1 ring-gray-100"
+      >
+        <h2 class="text-lg font-bold">送信内容（デモ表示）</h2>
+        <p class="mt-2 text-sm text-gray-600">
+          今はサーバに送っていないので、入力内容をここに表示しています。
+        </p>
+
+        <pre
+          id="resultJson"
+          class="mt-4 overflow-auto rounded-xl bg-gray-900 p-4 text-xs text-gray-100"
+        ></pre>
+
+        <div class="mt-5 flex flex-col gap-3 sm:flex-row">
+          <button
+            id="copyBtn"
+            class="inline-flex items-center justify-center rounded-md border border-gray-200 bg-white px-6 py-3 text-sm font-semibold text-gray-900 hover:bg-gray-50"
+            type="button"
+          >
+            内容をコピー
+          </button>
+
+          <a
+            href="./index.html"
+            class="inline-flex items-center justify-center rounded-md border border-gray-200 bg-white px-6 py-3 text-sm font-semibold text-gray-900 hover:bg-gray-50"
+          >
+            トップへ戻る
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t bg-white">
+      <div class="mx-auto max-w-5xl px-4 py-8 text-sm text-gray-600 sm:px-6">
+        <div
+          class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between"
+        >
+          <p>© 襖・障子 張り替え</p>
+          <div class="flex gap-3">
+            <a class="hover:text-gray-900" href="./price.html">料金表</a>
+            <a class="hover:text-gray-900" href="./contact.html"
+              >お問い合わせ</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="./js/contact.js" defer></script>
+  </body>
+</html>
